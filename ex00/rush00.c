@@ -17,23 +17,26 @@ void	rush(int x, int y)
 	int	var_y;
 	int	var_x;
 
-	var_y = 1;
-	while (var_y <= y)
+	if (x > 0 && y > 0)
 	{
-		var_x = 1;
-		while (var_x <= x)
+		var_y = 1;
+		while (var_y <= y)
 		{
-			if ((var_x == 1 || var_x == x) && (var_y == 1 || var_y == y))
-				ft_putchar('o');
-			else if (var_x < x && (var_y == 1 || var_y == y))
-				ft_putchar('-');
-			else if ((var_x == 1 || var_x == x) && var_y < y)
-				ft_putchar('|');
-			else
-				ft_putchar(' ');
-			var_x++;
+			var_x = 1;
+			while (var_x <= x)
+			{
+				if ((var_x == 1 || var_x == x) && (var_y == 1 || var_y == y))
+					ft_putchar('o');
+				else if (var_x < x && (var_y == 1 || var_y == y))
+					ft_putchar('-');
+				else if ((var_x == 1 || var_x == x) && var_y < y)
+					ft_putchar('|');
+				else
+					ft_putchar(' ');
+				var_x++;
+			}
+			var_y++;
+			ft_putchar('\n');
 		}
-		var_y++;
-		ft_putchar('\n');
 	}
 }
